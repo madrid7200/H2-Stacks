@@ -15,12 +15,14 @@ public class Stack<T> implements IStack<T> {
 	public T pop() {
 		// TODO Auto-generated method stub
 		if(size == 0) {
-			System.out.print("Stack is empty");
+			System.out.println("Stack is empty");
+			//System.out.print("hola" + current.get(size-1));
 		}
 		else {
-			T item = current.get(size --);
-			current.remove(size--);
-			size = size--;
+			T item = current.get(size-1);
+			current.remove(size-1);
+			size = size-1;
+			System.out.println("pop item " + item);
 			return item;
 		}
 		return null;
@@ -30,7 +32,8 @@ public class Stack<T> implements IStack<T> {
 	public void push(T item) {
 		// TODO Auto-generated method stub
 		current.add(item);
-		size = size++;
+		size = size+ 1;
+		System.out.println("Stack size " + size);
 	
 	}
 
@@ -39,7 +42,7 @@ public class Stack<T> implements IStack<T> {
 		
 		// TODO Auto-generated method stub
 		if(size == 0) {
-			System.out.print("Stack is empty");
+			System.out.println("Stack is empty");
 		}
 		
 		return current.get(0);
